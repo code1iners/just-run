@@ -1,11 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://chd6toaeiyk44"]
+[gd_scene load_steps=26 format=3 uid="uid://chd6toaeiyk44"]
 
 [ext_resource type="Texture2D" uid="uid://38076ljhudl0" path="res://assets/images/Packs/Sunnyland/spritesheets/player.png" id="1_tolna"]
-[ext_resource type="Script" path="res://scenes/player/player_state_machine.gd" id="2_6nstm"]
-[ext_resource type="Script" path="res://scenes/player/states/player_state_idle.gd" id="3_kts4o"]
-[ext_resource type="Script" path="res://scenes/player/states/player_state_walk.gd" id="4_dgn57"]
-[ext_resource type="Script" path="res://scenes/player/states/player_state_sit.gd" id="4_qr2wc"]
-[ext_resource type="Script" path="res://scenes/player/states/player_state_jump.gd" id="5_x7b0f"]
+[ext_resource type="Script" path="res://scenes/player/scripts/player_camera.gd" id="2_fymtw"]
+[ext_resource type="Script" path="res://scenes/player/scripts/player_state_machine.gd" id="3_eryrp"]
+[ext_resource type="Script" path="res://scenes/player/scripts/states/player_state_idle.gd" id="4_j13q4"]
+[ext_resource type="Script" path="res://scenes/player/scripts/states/player_state_sit.gd" id="5_ot0n5"]
+[ext_resource type="Script" path="res://scenes/player/scripts/states/player_state_walk.gd" id="6_0l60t"]
+[ext_resource type="Script" path="res://scenes/player/scripts/states/player_state_jump.gd" id="7_3lvi3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jt0r"]
 atlas = ExtResource("1_tolna")
@@ -158,31 +159,33 @@ position = Vector2(2.08165e-12, -8)
 sprite_frames = SubResource("SpriteFrames_e37w6")
 animation = &"down"
 autoplay = "idle"
-frame_progress = 0.452248
+frame_progress = 0.992652
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -4)
 shape = SubResource("RectangleShape2D_2qli8")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2.08165e-12, -20)
 zoom = Vector2(4, 4)
 editor_draw_limits = true
+script = ExtResource("2_fymtw")
 
 [node name="StateMachine" type="Node" parent="."]
-script = ExtResource("2_6nstm")
+script = ExtResource("3_eryrp")
 
 [node name="IdleState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
-script = ExtResource("3_kts4o")
+script = ExtResource("4_j13q4")
 
 [node name="SitState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
-script = ExtResource("4_qr2wc")
+script = ExtResource("5_ot0n5")
 
 [node name="WalkState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
-script = ExtResource("4_dgn57")
+script = ExtResource("6_0l60t")
 
 [node name="JumpState" type="Node" parent="StateMachine"]
 unique_name_in_owner = true
-script = ExtResource("5_x7b0f")
+script = ExtResource("7_3lvi3")
