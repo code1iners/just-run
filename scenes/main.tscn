@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://ctm6he7rkgfn6"]
+[gd_scene load_steps=3 format=3 uid="uid://ctm6he7rkgfn6"]
 
+[ext_resource type="Script" path="res://shared/scripts/level.gd" id="1_m55sb"]
 [ext_resource type="PackedScene" uid="uid://8xody4ne2ey1" path="res://scenes/levels/lobby_level.tscn" id="1_tmyt0"]
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_m55sb")
 
 [node name="LobbyLevel" parent="." instance=ExtResource("1_tmyt0")]

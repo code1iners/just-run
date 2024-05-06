@@ -141,7 +141,6 @@ texture = ExtResource("1_8l84q")
 sources/0 = SubResource("TileSetAtlasSource_wkgwn")
 
 [node name="GameLevel" type="TileMap"]
-z_index = -1
 tile_set = SubResource("TileSet_r41i3")
 format = 2
 layer_0/name = "visible"
