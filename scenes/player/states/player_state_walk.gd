@@ -39,8 +39,8 @@ func handle_input(event: InputEvent) -> State:
 	if event.is_action_pressed("up"):
 		return jump_state
 	
-	#if event.is_action_pressed("down"):
-		#return sit_state
+	if event.is_action_pressed("down"):
+		return sit_state
 		
 	return null
 

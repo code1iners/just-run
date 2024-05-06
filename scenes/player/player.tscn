@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://chd6toaeiyk44"]
+[gd_scene load_steps=25 format=3 uid="uid://chd6toaeiyk44"]
 
 [ext_resource type="Texture2D" uid="uid://38076ljhudl0" path="res://assets/images/Packs/Sunnyland/spritesheets/player.png" id="1_tolna"]
 [ext_resource type="Script" path="res://scenes/player/player_state_machine.gd" id="2_6nstm"]
@@ -6,10 +6,6 @@
 [ext_resource type="Script" path="res://scenes/player/states/player_state_walk.gd" id="4_dgn57"]
 [ext_resource type="Script" path="res://scenes/player/states/player_state_sit.gd" id="4_qr2wc"]
 [ext_resource type="Script" path="res://scenes/player/states/player_state_jump.gd" id="5_x7b0f"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_48sox"]
-atlas = ExtResource("1_tolna")
-region = Rect2(0, 96, 33, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3jt0r"]
 atlas = ExtResource("1_tolna")
@@ -79,15 +75,12 @@ region = Rect2(165, 32, 33, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_48sox")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_3jt0r")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8xpub")
 }],
-"loop": false,
+"loop": true,
 "name": &"down",
 "speed": 10.0
 }, {
@@ -165,6 +158,7 @@ position = Vector2(2.08165e-12, -8)
 sprite_frames = SubResource("SpriteFrames_e37w6")
 animation = &"down"
 autoplay = "idle"
+frame_progress = 0.75882
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -4)

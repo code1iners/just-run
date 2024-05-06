@@ -13,9 +13,8 @@ func exit() -> void:
 
 # What happens during the _process update in this state?
 func process(_delta: float) -> State:
-	
-	if player.direction != 0:
-		return walk_state
+	if Input.is_action_just_released("down"):
+		return idle_state
 		
 	return null
 	
@@ -27,4 +26,5 @@ func physics(delta: float) -> State:
 
 # What happens with input events in thie state?
 func handle_input(event: InputEvent) -> State:
+			
 	return null

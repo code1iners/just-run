@@ -1,5 +1,7 @@
 class_name PlayerStateJump extends State
 
+# TODO: Implement sit move state.
+
 var isJumping: bool = false
 
 @export var jump_velocity: float = -200.0
