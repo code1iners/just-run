@@ -7,7 +7,9 @@ func _ready() -> void:
 	set_limits(LevelManager.current_tilemap_bounds)
 
 func set_limits(bounds: Array[Vector2]) -> void:
-	print("set_limits", bounds)
+	if bounds.size() == 0:
+		return
+		
 	limit_left = int(bounds[0].x)
 	limit_top = int(bounds[0].y)
 	limit_right = int(bounds[1].x)

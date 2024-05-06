@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cfu3h5cv2loia" path="res://assets/images/Packs/Sunnyland/environment/Background/back.png" id="1_nqur4"]
 [ext_resource type="Texture2D" uid="uid://bc24x1m6764gc" path="res://assets/images/Packs/Sunnyland/environment/tileset.png" id="2_0ummu"]
-[ext_resource type="Script" path="res://scenes/level/lobby_level_tile_map.gd" id="3_66h32"]
+[ext_resource type="Script" path="res://scenes/levels/scripts/level_tile_map.gd" id="3_66h32"]
 [ext_resource type="Texture2D" uid="uid://igge6i0320ox" path="res://assets/images/Packs/Sunnyland/environment/Props/pine.png" id="4_8hru0"]
 [ext_resource type="Texture2D" uid="uid://b8t0myh0bkbog" path="res://assets/images/Packs/Sunnyland/environment/Background/middle.png" id="4_atsjb"]
 [ext_resource type="Texture2D" uid="uid://dlilra8s6lg5y" path="res://assets/images/Packs/Sunnyland/environment/Props/tree-house.png" id="5_jsjl1"]
