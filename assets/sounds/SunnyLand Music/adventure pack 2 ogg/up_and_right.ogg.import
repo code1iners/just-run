@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bro34l80awsnb"
+path="res://.godot/imported/up_and_right.ogg-560dded6a55e581192ab74f7a4c919da.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/sounds/SunnyLand Music/adventure pack 2 ogg/up_and_right.ogg"
+dest_files=["res://.godot/imported/up_and_right.ogg-560dded6a55e581192ab74f7a4c919da.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
