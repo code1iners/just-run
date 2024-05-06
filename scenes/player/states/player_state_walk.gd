@@ -18,7 +18,7 @@ func exit() -> void:
 	move_speed = base_move_speed
 
 # What happens during the _process update in this state?
-func process(delta: float) -> State:
+func process(_delta: float) -> State:
 	if player.direction == 0:
 		return idle_state
 		

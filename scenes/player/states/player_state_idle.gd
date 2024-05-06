@@ -21,7 +21,7 @@ func process(_delta: float) -> State:
 	return null
 	
 # What happens during the _physics_process update in this state?
-func physics(delta: float) -> State:
+func physics(_delta: float) -> State:
 	player.velocity.x = move_toward(player.velocity.x, 0, walk_state.move_speed / 10)
 	
 	return null

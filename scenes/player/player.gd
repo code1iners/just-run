@@ -11,7 +11,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready():
 	state_machine.initialize(self)
 
-func _process(delta):
+func _process(_delta: float):
 	set_direction()
 
 func _physics_process(delta):
@@ -21,7 +21,8 @@ func _physics_process(delta):
 	move_and_slide()
 
 func set_direction() -> void:
-	direction = Input.get_axis("left", "right")
+	var new_direction = Input.get_axis("left", "right")
+	direction = int(floor(new_direction))
 
 func set_animation(state: String) -> void:
 	animation.play(state)

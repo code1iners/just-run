@@ -24,7 +24,7 @@ func exit() -> void:
 # What happens during the _process update in this state?
 func process(_delta: float) -> State:
 	if !isJumping:
-		return idle_state if player.direction == 0 else walk_state
+		return idle_state as State if player.direction == 0 else walk_state as State
 		
 	return null
 	
