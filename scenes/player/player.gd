@@ -20,6 +20,11 @@ func _process(delta):
 	set_animation()
 
 func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y += gravity * delta
+
+	if Input.is_action_just_pressed("up") and is_on_floor():
+		velocity.y = jump_velocity
 	
 	set_direction(delta)
 	
@@ -39,28 +44,19 @@ func set_move_speed(delta: float) -> void:
 		move_speed += delta * (move_speed / 10)
 
 func set_direction(delta: float) -> void:
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-	if Input.is_action_just_pressed("up") and is_on_floor():
-		velocity.y = jump_velocity
-
 	direction = Input.get_axis("left", "right")
-
-func set_animation() -> void:
-	match direction:
-		-1:
-			animation.flip_h = true
-		1:
-			animation.flip_h = false
 	
+	# Not moving
+	if direction == 0:
+		pass
+		
+	animation.flip_h = direction == -1  # direction이 -1이면 flip_h는 true, 아니면 false가 됩니다.
+
+
+func set_animation() -> void:		
 	if not is_on_floor():
 		animation.play("jump")
+	elif direction != 0:  # direction이 0이 아니면 캐릭터가 움직이고 있는 것으로 판단합니다.
+		animation.play("walk")
 	else:
-		match direction:
-			-1, 1:
-				animation.play("walk")
-			_:
-				if is_on_floor():
-					animation.play("idle")
-				
+		animation.play("idle")
