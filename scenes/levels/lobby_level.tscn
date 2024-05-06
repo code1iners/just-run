@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://8xody4ne2ey1"]
+[gd_scene load_steps=10 format=3 uid="uid://8xody4ne2ey1"]
 
 [ext_resource type="Texture2D" uid="uid://cfu3h5cv2loia" path="res://assets/images/Packs/Sunnyland/environment/Background/back.png" id="1_nqur4"]
 [ext_resource type="Texture2D" uid="uid://bc24x1m6764gc" path="res://assets/images/Packs/Sunnyland/environment/tileset.png" id="2_0ummu"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://igge6i0320ox" path="res://assets/images/Packs/Sunnyland/environment/Props/pine.png" id="4_8hru0"]
 [ext_resource type="Texture2D" uid="uid://b8t0myh0bkbog" path="res://assets/images/Packs/Sunnyland/environment/Background/middle.png" id="4_atsjb"]
 [ext_resource type="Texture2D" uid="uid://dlilra8s6lg5y" path="res://assets/images/Packs/Sunnyland/environment/Props/tree-house.png" id="5_jsjl1"]
+[ext_resource type="PackedScene" uid="uid://b7tocnaulh56y" path="res://scenes/levels/player_spawn.tscn" id="7_gg83r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_482of"]
 texture = ExtResource("2_0ummu")
@@ -142,6 +143,7 @@ texture = ExtResource("2_0ummu")
 sources/0 = SubResource("TileSetAtlasSource_482of")
 
 [node name="LobbyLevel" type="TileMap"]
+z_index = -1
 tile_set = SubResource("TileSet_kw6ga")
 format = 2
 layer_0/name = "visible"
@@ -181,3 +183,6 @@ texture = ExtResource("4_8hru0")
 [node name="Tree-house" type="Sprite2D" parent="."]
 position = Vector2(320, 104)
 texture = ExtResource("5_jsjl1")
+
+[node name="PlayerSpawn" parent="." instance=ExtResource("7_gg83r")]
+position = Vector2(120, 176)

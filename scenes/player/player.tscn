@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://chd6toaeiyk44"]
+[gd_scene load_steps=27 format=3 uid="uid://chd6toaeiyk44"]
 
 [ext_resource type="Texture2D" uid="uid://38076ljhudl0" path="res://assets/images/Packs/Sunnyland/spritesheets/player.png" id="1_tolna"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ysi3b"]
 [ext_resource type="Script" path="res://scenes/player/scripts/player_camera.gd" id="2_fymtw"]
 [ext_resource type="Script" path="res://scenes/player/scripts/player_state_machine.gd" id="3_eryrp"]
 [ext_resource type="Script" path="res://scenes/player/scripts/states/player_state_idle.gd" id="4_j13q4"]
@@ -152,8 +153,8 @@ animations = [{
 size = Vector2(18, 24)
 
 [node name="Player" type="CharacterBody2D"]
-z_index = 1
 collision_mask = 16
+script = ExtResource("1_ysi3b")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.08165e-12, -8)

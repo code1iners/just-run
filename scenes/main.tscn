@@ -1,13 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctm6he7rkgfn6"]
+[gd_scene load_steps=2 format=3 uid="uid://ctm6he7rkgfn6"]
 
-[ext_resource type="PackedScene" uid="uid://8xody4ne2ey1" path="res://scenes/levels/lobby_level/lobby_level.tscn" id="1_tmyt0"]
-[ext_resource type="PackedScene" uid="uid://chd6toaeiyk44" path="res://scenes/player/player.tscn" id="2_q8s4h"]
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="3_7auwp"]
+[ext_resource type="PackedScene" uid="uid://8xody4ne2ey1" path="res://scenes/levels/lobby_level.tscn" id="1_tmyt0"]
 
 [node name="Main" type="Node2D"]
-
-[node name="Player" parent="." instance=ExtResource("2_q8s4h")]
-position = Vector2(192, 128)
-script = ExtResource("3_7auwp")
 
 [node name="LobbyLevel" parent="." instance=ExtResource("1_tmyt0")]
