@@ -1,7 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://chd6toaeiyk44"]
+[gd_scene load_steps=26 format=3 uid="uid://chd6toaeiyk44"]
 
 [ext_resource type="Texture2D" uid="uid://38076ljhudl0" path="res://assets/images/Packs/Sunnyland/spritesheets/player.png" id="1_tolna"]
 [ext_resource type="Script" path="res://scenes/player/player_state_machine.gd" id="2_6nstm"]
+[ext_resource type="Script" path="res://scenes/player/states/player_state_idle.gd" id="3_kts4o"]
+[ext_resource type="Script" path="res://scenes/player/states/player_state_walk.gd" id="4_dgn57"]
+[ext_resource type="Script" path="res://scenes/player/states/player_state_sit.gd" id="4_qr2wc"]
+[ext_resource type="Script" path="res://scenes/player/states/player_state_jump.gd" id="5_x7b0f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_48sox"]
 atlas = ExtResource("1_tolna")
@@ -124,7 +128,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 1.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -159,7 +163,7 @@ collision_mask = 16
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(2.08165e-12, -8)
 sprite_frames = SubResource("SpriteFrames_e37w6")
-animation = &"walk"
+animation = &"down"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -173,6 +177,18 @@ editor_draw_limits = true
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource("2_6nstm")
 
-[node name="Idle" type="Node" parent="StateMachine"]
+[node name="IdleState" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
+script = ExtResource("3_kts4o")
 
-[node name="Walk" type="Node" parent="StateMachine"]
+[node name="SitState" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
+script = ExtResource("4_qr2wc")
+
+[node name="WalkState" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
+script = ExtResource("4_dgn57")
+
+[node name="JumpState" type="Node" parent="StateMachine"]
+unique_name_in_owner = true
+script = ExtResource("5_x7b0f")
